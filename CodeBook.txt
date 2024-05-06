@@ -1,0 +1,44 @@
+The variables in the final dataset "final_data", obtained by the code
+"run_analysis.R" are
+
+"subject"                             "activity_level"                     
+"mean_of_tBodyAcc-mean()-X"           "mean_of_tBodyAcc-mean()-Y"          
+"mean_of_tBodyAcc-mean()-Z"           "mean_of_tGravityAcc-mean()-X"       
+"mean_of_tGravityAcc-mean()-Y"        "mean_of_tGravityAcc-mean()-Z"       
+"mean_of_tBodyAccJerk-mean()-X"       "mean_of_tBodyAccJerk-mean()-Y"      
+"mean_of_tBodyAccJerk-mean()-Z"       "mean_of_tBodyGyro-mean()-X"         
+"mean_of_tBodyGyro-mean()-Y"          "mean_of_tBodyGyro-mean()-Z"         
+"mean_of_tBodyGyroJerk-mean()-X"      "mean_of_tBodyGyroJerk-mean()-Y"     
+"mean_of_tBodyGyroJerk-mean()-Z"      "mean_of_tBodyAccMag-mean()"         
+"mean_of_tGravityAccMag-mean()"       "mean_of_tBodyAccJerkMag-mean()"     
+"mean_of_tBodyGyroMag-mean()"         "mean_of_tBodyGyroJerkMag-mean()"    
+"mean_of_fBodyAcc-mean()-X"           "mean_of_fBodyAcc-mean()-Y"          
+"mean_of_fBodyAcc-mean()-Z"           "mean_of_fBodyAccJerk-mean()-X"      
+"mean_of_fBodyAccJerk-mean()-Y"       "mean_of_fBodyAccJerk-mean()-Z"      
+"mean_of_fBodyGyro-mean()-X"          "mean_of_fBodyGyro-mean()-Y"         
+"mean_of_fBodyGyro-mean()-Z"          "mean_of_fBodyAccMag-mean()"         
+"mean_of_fBodyBodyAccJerkMag-mean()"  "mean_of_fBodyBodyGyroMag-mean()"    
+"mean_of_fBodyBodyGyroJerkMag-mean()"
+
+From here on, all referenced files are contained in the extracted
+UCI HAR Dataset heirarchy.
+
+"subject" (character) was obtained from (what amounts to) concatenation of the subject
+IDs from the data sets "subject_text.txt" and "subject_train.txt"
+
+"activity_level" (character) is also a concatentation of the numerically coded
+data sets "y_test.txt" and "y_train.txt" with language labels provided by
+"activity_levels.txt"
+
+The remaining variables are means (grouped by combinations of "subject"
+and "activity_level") of those variables in the original data sets
+that are themselves means.
+
+The variable names of these original means were extracted from the variables in
+"X_test.txt" and "Y_test.txt" with language labels described in "features.txt"
+and "features_info.test". This was accomplished by selecting those that had the
+character string "mean()" in their name.
+
+From here, grouped means of these variables were calculated and named by
+appending "mean_of_" to the original variable. For instance,
+"mean_of_tBodyAcc-mean()-X" corresponds to "tBodyAcc-mean()-X", and so on.
